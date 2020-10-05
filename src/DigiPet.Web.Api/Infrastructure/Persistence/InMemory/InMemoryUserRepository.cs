@@ -8,6 +8,9 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace DigiPet.Web.Api.Infrastructure.Persistence.InMemory
 {
+    /// <summary>
+    /// InMemory Repository to encapsulate <see cref="IMemoryCache"/>
+    /// </summary>
     public class InMemoryUserRepository : IUserRepository
     {
         private readonly SemaphoreSlim _cacheSemaphore = new SemaphoreSlim(1, 1);
@@ -79,7 +82,6 @@ namespace DigiPet.Web.Api.Infrastructure.Persistence.InMemory
             {
                 _cacheSemaphore.Release();
             }
-
         }
     }
 }

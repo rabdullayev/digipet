@@ -5,6 +5,9 @@ using Microsoft.Extensions.Logging;
 
 namespace DigiPet.Web.Api.Infrastructure.Messaging.Base
 {
+    /// <summary>
+    /// Simple message bus to enable pub-sub
+    /// </summary>
     public class Hub : IHub
     {
         private readonly ILogger<Hub> _logger;

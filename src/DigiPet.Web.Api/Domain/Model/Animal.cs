@@ -14,7 +14,7 @@ namespace DigiPet.Web.Api.Domain.Model
         public int Code { get; }
         public string Type { get; }
         public Dictionary<MetricType, Metric> Metrics { get; }
-
+        
         public void Handle(GameServerEvents.TickEvent @event)
         {
             foreach (var metric in Metrics)

@@ -8,6 +8,10 @@ using Microsoft.Extensions.Options;
 
 namespace DigiPet.Web.Api.Application.Factory
 {
+    /// <summary>
+    /// A factory to create an instance of the animal.
+    /// Animals don't own an instance before they get adopted.
+    /// </summary>
     public interface IAnimalFactory
     {
         Animal Create(int code);

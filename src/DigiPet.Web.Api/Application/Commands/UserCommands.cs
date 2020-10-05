@@ -1,5 +1,8 @@
 ﻿namespace DigiPet.Web.Api.Application.Commands
 {
+    /// <summary>
+    /// Container for user commands that API accepts
+    /// </summary>
     public class UserCommands
     {
         public class Create

@@ -10,6 +10,9 @@ using Microsoft.Extensions.Options;
 
 namespace DigiPet.Web.Api.Services
 {
+    /// <summary>
+    /// Simple Game Server that publishes <see cref="GameServerEvents.TickEvent"/> on a constant interval
+    /// </summary>
     public class HostedGameServer : IHostedService, IDisposable
     {
         private readonly IHub _hub;

@@ -7,12 +7,14 @@ using Microsoft.Extensions.Logging;
 
 namespace DigiPet.Web.Api.Services
 {
+    /// <summary>
+    /// After an animal gets adopted, it subscribes to <see cref="GameServerEvents.TickEvent"/>
+    /// </summary>
     public class HostedAdoptionHandler : IHostedService
     {
         private readonly IHub _hub;
         private readonly ILogger<HostedAdoptionHandler> _logger;
-
-
+        
         public HostedAdoptionHandler(ILogger<HostedAdoptionHandler> logger, IHub hub)
         {
             _logger = logger;

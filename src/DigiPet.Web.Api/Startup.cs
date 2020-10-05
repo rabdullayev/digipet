@@ -29,6 +29,7 @@ namespace DigiPet.Web.Api
         {
             services.AddHealthChecks();
             services.AddControllers().AddNewtonsoftJson(options => options.SerializerSettings.TypeNameHandling = TypeNameHandling.Auto);
+            services.AddSwaggerGen();
 
             services.Configure<AnimalOptions>(Configuration.GetSection(AnimalOptions.ConfigSection));
             services.Configure<GameOptions>(Configuration.GetSection(GameOptions.ConfigSection));
@@ -50,6 +51,13 @@ namespace DigiPet.Web.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "DigiPet API v1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseRouting();
 
